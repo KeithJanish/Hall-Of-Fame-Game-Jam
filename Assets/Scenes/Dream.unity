@@ -301,6 +301,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 280317754336690249, guid: ffd71fbb5399266448c145a840cc8291, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 280317754336690249, guid: ffd71fbb5399266448c145a840cc8291, type: 3}
+      propertyPath: horMove
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 811067394086945324, guid: ffd71fbb5399266448c145a840cc8291, type: 3}
       propertyPath: m_Name
       value: Mr. Dream Guy

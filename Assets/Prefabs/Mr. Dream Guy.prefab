@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 563839113866604379}
   - component: {fileID: 8771274281875328934}
   - component: {fileID: 2934692806487878260}
-  - component: {fileID: 4075681556358794624}
   - component: {fileID: 8578236689842988695}
+  - component: {fileID: 280317754336690249}
   m_Layer: 0
   m_Name: Mr. Dream Guy
   m_TagString: Player
@@ -165,27 +165,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9329615, y: 1.840139}
   m_EdgeRadius: 0
---- !u!114 &4075681556358794624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811067394086945324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0011648dfa8ee3543abe620b20602c8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horMove: 0
-  rigbody: {fileID: 8771274281875328934}
-  dcFab: {fileID: 7680265812640806774, guid: 3a86614dea3464147a6c70e4636a240c, type: 3}
-  dcObj: {fileID: 0}
-  moveToHere: {x: 0, y: 0}
-  dcObjThrowPoint: {x: 0, y: 0}
-  spawnDelayTimer: 0
-  speed: 0
-  sprRend: {fileID: 0}
 --- !u!95 &8578236689842988695
 Animator:
   serializedVersion: 7
@@ -208,6 +187,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &280317754336690249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811067394086945324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742aac79268f7c6479d96b6b09866e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horMove: 0
+  rigbody: {fileID: 8771274281875328934}
+  dcFab: {fileID: 7680265812640806774, guid: 3a86614dea3464147a6c70e4636a240c, type: 3}
+  dcObj: {fileID: 0}
+  moveToHere: {x: 0, y: 0}
+  dcObjThrowPoint: {x: 0, y: 0}
+  spawnDelayTimer: 0
+  speed: 0
+  sprRendStand: {fileID: 563839113866604379}
+  sprRendRunLeft: {fileID: 0}
+  sprRendRunRight: {fileID: 0}
+  sprRendDeath: {fileID: 0}
 --- !u!1 &6980209317488979969
 GameObject:
   m_ObjectHideFlags: 0
