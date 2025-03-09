@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: 0d0c6ac0bbef6a8438ad119e417883c0
+guid: 22d3b5f4a16292241b09423e9205ff72
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6785269774915141974
-    second: Player_Running_Right_0
+      213: 2265537207680822015
+    second: BigBad_Unbroken_0
   - first:
-      213: -8576984992847098322
-    second: Player_Running_Right_1
+      213: 8432044821679300794
+    second: BigBad_Unbroken_1
   - first:
-      213: -8176452584507803729
-    second: Player_Running_Right_2
+      213: 4062085610053414235
+    second: BigBad_Unbroken_2
   - first:
-      213: -8561871352144671682
-    second: Player_Running_Right_3
+      213: 2905992828872008382
+    second: BigBad_Unbroken_3
   - first:
-      213: 1031349891422645051
-    second: Player_Running_Right_4
+      213: 6383713980275676861
+    second: BigBad_Unbroken_4
   - first:
-      213: -4819965247184650747
-    second: Player_Running_Right_5
+      213: -3037575968927143329
+    second: BigBad_Unbroken_5
   - first:
-      213: 8150526248998623189
-    second: Player_Running_Right_6
-  - first:
-      213: -5016487483815105150
-    second: Player_Running_Right_7
+      213: -3339259376289514435
+    second: BigBad_Unbroken_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 35
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Running_Right_0
+      name: BigBad_Unbroken_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 2
         y: 0
-        width: 27
-        height: 66
+        width: 40
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aaefcf0f611e5d1a0800000000000000
-      internalID: -6785269774915141974
+      spriteID: ffaee39461ec07f10800000000000000
+      internalID: 2265537207680822015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Running_Right_1
+      name: BigBad_Unbroken_1
       rect:
         serializedVersion: 2
-        x: 85
+        x: 48
         y: 0
-        width: 26
-        height: 65
+        width: 38
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2e0e71879d68f880800000000000000
-      internalID: -8576984992847098322
+      spriteID: ab0ed562714a40570800000000000000
+      internalID: 8432044821679300794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Running_Right_2
+      name: BigBad_Unbroken_2
       rect:
         serializedVersion: 2
-        x: 154
+        x: 91
         y: 0
-        width: 23
-        height: 65
+        width: 38
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa77691f1b7678e80800000000000000
-      internalID: -8176452584507803729
+      spriteID: b5da57a275d6f5830800000000000000
+      internalID: 4062085610053414235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Running_Right_3
+      name: BigBad_Unbroken_3
       rect:
         serializedVersion: 2
-        x: 220
+        x: 135
         y: 0
-        width: 23
-        height: 65
+        width: 38
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3cc2d23e5f1e2980800000000000000
-      internalID: -8561871352144671682
+      spriteID: eb2afbcc419245820800000000000000
+      internalID: 2905992828872008382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Running_Right_4
+      name: BigBad_Unbroken_4
       rect:
         serializedVersion: 2
-        x: 285
+        x: 179
         y: 0
-        width: 24
-        height: 65
+        width: 38
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3b626d0347105e00800000000000000
-      internalID: 1031349891422645051
+      spriteID: db6d60eea02879850800000000000000
+      internalID: 6383713980275676861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Running_Right_5
+      name: BigBad_Unbroken_5
       rect:
         serializedVersion: 2
-        x: 351
+        x: 223
         y: 0
-        width: 24
-        height: 65
+        width: 38
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50eb4db152b0c1db0800000000000000
-      internalID: -4819965247184650747
+      spriteID: f5aa5d100cc58d5d0800000000000000
+      internalID: -3037575968927143329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Running_Right_6
+      name: BigBad_Unbroken_6
       rect:
         serializedVersion: 2
-        x: 418
+        x: 266
         y: 0
-        width: 23
-        height: 64
+        width: 40
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,30 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d75f0ca07c7c1170800000000000000
-      internalID: 8150526248998623189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Running_Right_7
-      rect:
-        serializedVersion: 2
-        x: 484
-        y: 0
-        width: 23
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28de103463bd16ab0800000000000000
-      internalID: -5016487483815105150
+      spriteID: d3cfe571a4198a1d0800000000000000
+      internalID: -3339259376289514435
       vertices: []
       indices: 
       edges: []
@@ -300,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b0f1deda667c4e748953bf57b04109a7
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -310,14 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player_Running_Right_0: -6785269774915141974
-      Player_Running_Right_1: -8576984992847098322
-      Player_Running_Right_2: -8176452584507803729
-      Player_Running_Right_3: -8561871352144671682
-      Player_Running_Right_4: 1031349891422645051
-      Player_Running_Right_5: -4819965247184650747
-      Player_Running_Right_6: 8150526248998623189
-      Player_Running_Right_7: -5016487483815105150
+      BigBad_Unbroken_0: 2265537207680822015
+      BigBad_Unbroken_1: 8432044821679300794
+      BigBad_Unbroken_2: 4062085610053414235
+      BigBad_Unbroken_3: 2905992828872008382
+      BigBad_Unbroken_4: 6383713980275676861
+      BigBad_Unbroken_5: -3037575968927143329
+      BigBad_Unbroken_6: -3339259376289514435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
