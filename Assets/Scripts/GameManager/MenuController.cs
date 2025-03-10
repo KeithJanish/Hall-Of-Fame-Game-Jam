@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,24 +6,37 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] private bool startTimer = false;
-    [SerializeField] private float targetTime = 180f;
+    [SerializeField] private float currentTime = 180f;
+    [SerializeField] private float totalTime = 180f;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    [SerializeField] private TextMeshProUGUI timerText;
+
 
     // Timer
     private void Update()
     {
         if(startTimer)
         {
-            targetTime -= Time.deltaTime;
-            if (targetTime <= 0f)
-            {
-                GameOver();
-            }
+            currentTime -= Time.deltaTime;
+            timerText = FindAnyObjectByType<TextMeshProUGUI>();
+
         }
+        if (currentTime <= 0f && startTimer)
+        {
+            startTimer = false;
+            currentTime = 0f;
+            GameOver();
+        }
+
+        UpdateTimerText();
+    }
+
+    private void UpdateTimerText()
+    {
+        int minutes = Mathf.FloorToInt(currentTime / 60f);
+        int seconds = Mathf.FloorToInt(currentTime % 60f);
+
+        timerText.text = string.Format("{00}:{1:00}", minutes, seconds);
     }
 
     private void GameOver()

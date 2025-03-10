@@ -7,6 +7,8 @@ TagManager:
   - DreamCircle
   - SmallEnemy
   - BigEnemy
+  - Enemy
+  - Timer
   layers:
   - Default
   - TransparentFX
