@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7052596412697709194}
   - component: {fileID: 1206562007226075777}
   - component: {fileID: -1481413947774273521}
+  - component: {fileID: 7605110491338690769}
   m_Layer: 6
   m_Name: Small Enemy
   m_TagString: Enemy
@@ -191,7 +192,7 @@ Animator:
   m_GameObject: {fileID: 5237899322725635299}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef549f56d3e1ceb47b377e4d0790fa39, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3bdcdf621dfd0c64d8ef8caa1f6f9067, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -203,3 +204,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &7605110491338690769
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237899322725635299}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 5f86d69d1b5de8645ada214a618f720b, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0

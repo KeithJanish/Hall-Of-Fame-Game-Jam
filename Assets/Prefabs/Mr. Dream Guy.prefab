@@ -189,13 +189,14 @@ MonoBehaviour:
   moveToHere: {x: 0, y: 0}
   dcObjThrowPoint: {x: 0, y: 0}
   spriteTimer: 0
-  speed: 24.2
+  speed: 10
   sprRend: {fileID: 563839113866604379}
   ani: {fileID: 1288860311014056401}
   sPressedWhenDcExist: 0
   walk: {fileID: 6553789362979513245}
   onGround: 0
   ifDie: 0
+  deathForceAdded: 0
   spriteDead: {fileID: -625099412930161800, guid: 73115909c90c5ce4aad94b0c2767938a, type: 3}
 --- !u!95 &1288860311014056401
 Animator:
