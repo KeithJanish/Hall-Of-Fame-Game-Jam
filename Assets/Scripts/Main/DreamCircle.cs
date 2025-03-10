@@ -7,6 +7,7 @@ public class DreamCircle : MonoBehaviour
     private Enemy enemyRef;
     private SpriteRenderer spriteRenderer;
     public Sprite sprite;
+    public AudioSource crack;
 
     [SerializeField] private bool canHit = true;
 
@@ -18,6 +19,7 @@ public class DreamCircle : MonoBehaviour
             enemyRef = collision.GetComponent<Enemy>();
             print("Hit Enemy");
             enemyRef.health -= 1;
+            crack.Play();
             if(enemyRef.health <= 0 )
             {
                 Destroy(enemyRef.gameObject);
@@ -31,6 +33,7 @@ public class DreamCircle : MonoBehaviour
         {
             enemyRef = collision.GetComponent<Enemy>();
             enemyRef.health -= 1;
+            crack.Play();
             spriteRenderer = collision.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;
             if(enemyRef.health <= 0 )
