@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
             sprRend.sprite = spriteDead;
             if (deathForceAdded == false)
             {
-                rigbody.AddForce(new Vector2(0, 5));
+                rigbody.AddForce(new Vector2(0, 500));
                 deathForceAdded = true;
             }
         }

@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == targetTag)
         {
             print("Player has Died!");
+            other.gameObject.GetComponent<Player>().ifDie = true;
         }
     }
 
