@@ -106,7 +106,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2.16
+  m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -182,19 +182,20 @@ MonoBehaviour:
   rigbody: {fileID: 8771274281875328934}
   dcFab: {fileID: 7680265812640806774, guid: 3a86614dea3464147a6c70e4636a240c, type: 3}
   dcObj: {fileID: 0}
-  dcSprRend: {fileID: 0}
+  dcSprRend: {fileID: 563839113866604379}
   dcSprA: {fileID: 4530433918361379743, guid: b0408e4a272e9e846b44541290c2a02c, type: 3}
   dcSprB: {fileID: 4699623745766655208, guid: b0408e4a272e9e846b44541290c2a02c, type: 3}
   dcSecEnter: 0
   moveToHere: {x: 0, y: 0}
   dcObjThrowPoint: {x: 0, y: 0}
   spriteTimer: 0
-  speed: 3
+  speed: 24.2
   sprRend: {fileID: 563839113866604379}
   ani: {fileID: 1288860311014056401}
   sPressedWhenDcExist: 0
   walk: {fileID: 6553789362979513245}
   onGround: 0
+  ifDie: 0
 --- !u!95 &1288860311014056401
 Animator:
   serializedVersion: 7
