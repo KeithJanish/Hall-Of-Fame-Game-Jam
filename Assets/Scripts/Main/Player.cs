@@ -22,7 +22,8 @@ public class Player : MonoBehaviour
     public Animator ani;
     public bool sPressedWhenDcExist;
     public AudioSource walk;
-    public bool onGround;
+    public int onGround;
+    public bool ifDie;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,7 +38,7 @@ public class Player : MonoBehaviour
 
         rigbody.AddForce(new Vector2(horMove * speed, 0));
 
-        if (horMove < 0 && onGround == true && Input.GetKey(KeyCode.W) == false)
+        if (horMove < 0 && onGround > 0 && Input.GetKey(KeyCode.W) == false)
         {
             sprRend.flipX = false;
             ani.Play("A_Player_Run_Left");
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
                 walk.Play();
             }
         }
-        else if (horMove > 0 && onGround == true && Input.GetKey(KeyCode.W) == false)
+        else if (horMove > 0 && onGround > 0 && Input.GetKey(KeyCode.W) == false)
         {
             sprRend.flipX = false;
             ani.Play("A_Player_Run_Right");
@@ -69,7 +70,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(onGround == false)
+        if(onGround == 0)
         {
             rigbody.gravityScale += 0.1f;
         }
@@ -106,7 +107,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 rigbody.gravityScale = 1;
-                moveToHere = (dcObj.transform.position - transform.position) * 10;
+                moveToHere = (dcObj.transform.position - transform.position) * 15;
 
                 rigbody.AddForce(moveToHere);
 
@@ -150,7 +151,7 @@ public class Player : MonoBehaviour
         Debug.Log("Collision");
         if (collision.gameObject.layer == 7)
         {
-            onGround = true;
+            onGround += 1;
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -158,7 +159,7 @@ public class Player : MonoBehaviour
         Debug.Log("Collision");
         if (collision.gameObject.layer == 7)
         {
-            onGround = false;
+            onGround -= 1;
         }
     }
 }
