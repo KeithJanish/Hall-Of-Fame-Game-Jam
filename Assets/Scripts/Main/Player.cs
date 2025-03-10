@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public Animator ani;
     public bool sPressedWhenDcExist;
     public AudioSource walk;
+    public bool onGround;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
 
         rigbody.AddForce(new Vector2(horMove * speed, 0));
 
-        if (horMove < 0)
+        if (horMove < 0 && onGround == true && Input.GetKey(KeyCode.W) == false)
         {
             sprRend.flipX = false;
             ani.Play("A_Player_Run_Left");
@@ -45,7 +46,7 @@ public class Player : MonoBehaviour
                 walk.Play();
             }
         }
-        else if (horMove > 0)
+        else if (horMove > 0 && onGround == true && Input.GetKey(KeyCode.W) == false)
         {
             sprRend.flipX = false;
             ani.Play("A_Player_Run_Right");
@@ -68,7 +69,15 @@ public class Player : MonoBehaviour
             }
         }
 
-        Debug.Log("AAAAA");
+        if(onGround == false)
+        {
+            rigbody.gravityScale += 0.1f;
+        }
+        else
+        {
+            rigbody.gravityScale = 1;
+        }
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && dcObj == null)
         {
             dcSecEnter = false;
@@ -81,7 +90,7 @@ public class Player : MonoBehaviour
         else
         {
             spriteTimer += 1;
-            if(spriteTimer >= 7)
+            if (spriteTimer >= 7)
             {
                 if (dcSprRend.sprite == dcSprA)
                 {
@@ -96,9 +105,11 @@ public class Player : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W))
             {
-                moveToHere = (dcObj.transform.position - transform.position) * 20;
+                rigbody.gravityScale = 1;
+                moveToHere = (dcObj.transform.position - transform.position) * 10;
 
                 rigbody.AddForce(moveToHere);
+
             }
 
             if (sPressedWhenDcExist == false)
@@ -137,5 +148,17 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision");
+        if (collision.gameObject.layer == 7)
+        {
+            onGround = true;
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("Collision");
+        if (collision.gameObject.layer == 7)
+        {
+            onGround = false;
+        }
     }
 }
