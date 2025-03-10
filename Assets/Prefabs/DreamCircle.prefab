@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8934229393234586050}
   - component: {fileID: 4373158898763520516}
   - component: {fileID: 7180165487907412302}
+  - component: {fileID: -356566911271472654}
   m_Layer: 0
   m_Name: DreamCircle
   m_TagString: DreamCircle
@@ -222,3 +223,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-356566911271472654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7680265812640806774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c418f9ddc31d748919a298ef893a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -3834236137435961052, guid: 4c7f738ff8049594e870cfc5c228ce09, type: 3}
+  canHit: 1
