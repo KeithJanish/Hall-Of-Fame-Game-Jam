@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public AudioSource walk;
     public int onGround;
     public bool ifDie;
+    public StarManager sm;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -135,6 +136,12 @@ public class Player : MonoBehaviour
                 Destroy(other.gameObject);
                 Debug.Log("DreamCircle Destroyed");
             }
+        }
+
+        if (other.CompareTag("Star"))
+        {
+            sm.starsCollected++;
+            Destroy(other.gameObject);
         }
     }
     void OnTriggerExit2D(Collider2D other)
