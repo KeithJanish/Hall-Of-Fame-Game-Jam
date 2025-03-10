@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
     public AudioSource walk;
     public int onGround;
     public bool ifDie;
-    public StarManager sm;
+    public bool deathForceAdded;
+    public Sprite spriteDead;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,94 +36,108 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horMove = Input.GetAxis("Horizontal");
+        if (ifDie == false)
+        {
+            horMove = Input.GetAxis("Horizontal");
 
-        rigbody.AddForce(new Vector2(horMove * speed, 0));
+            rigbody.AddForce(new Vector2(horMove * speed, 0));
 
-        if (horMove < 0 && onGround > 0 && Input.GetKey(KeyCode.W) == false)
-        {
-            sprRend.flipX = false;
-            ani.Play("A_Player_Run_Left");
-            if (walk.isPlaying == false)
-            {
-                walk.Play();
-            }
-        }
-        else if (horMove > 0 && onGround > 0 && Input.GetKey(KeyCode.W) == false)
-        {
-            sprRend.flipX = false;
-            ani.Play("A_Player_Run_Right");
-            if (walk.isPlaying == false)
-            {
-                walk.Play();
-            }
-        }
-        else
-        {
-            ani.Play("D0_Nothing");
-            walk.Stop();
-            if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x)
-            {
-                sprRend.flipX = true;
-            }
-            else if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
+            if (horMove < 0 && onGround > 0 && Input.GetKey(KeyCode.W) == false)
             {
                 sprRend.flipX = false;
+                ani.Play("A_Player_Run_Left");
+                if (walk.isPlaying == false)
+                {
+                    walk.Play();
+                }
             }
-        }
-
-        if(onGround == 0)
-        {
-            rigbody.gravityScale += 0.1f;
-        }
-        else
-        {
-            rigbody.gravityScale = 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && dcObj == null)
-        {
-            dcSecEnter = false;
-            sPressedWhenDcExist = false;
-            spriteTimer = 0;
-            dcObj = Instantiate(dcFab, transform.position, Quaternion.identity);
-            dcObjThrowPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            dcSprRend = dcObj.GetComponent<SpriteRenderer>();
-        }
-        else
-        {
-            spriteTimer += 1;
-            if (spriteTimer >= 7)
+            else if (horMove > 0 && onGround > 0 && Input.GetKey(KeyCode.W) == false)
             {
-                if (dcSprRend.sprite == dcSprA)
+                sprRend.flipX = false;
+                ani.Play("A_Player_Run_Right");
+                if (walk.isPlaying == false)
                 {
-                    dcSprRend.sprite = dcSprB;
+                    walk.Play();
                 }
-                else
+            }
+            else
+            {
+                ani.Play("D0_Nothing");
+                walk.Stop();
+                if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x)
                 {
-                    dcSprRend.sprite = dcSprA;
+                    sprRend.flipX = true;
                 }
-                spriteTimer = 0;
+                else if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
+                {
+                    sprRend.flipX = false;
+                }
             }
 
-            if (Input.GetKey(KeyCode.W))
+            if(onGround == 0)
+            {
+                rigbody.gravityScale += 0.1f;
+            }
+            else
             {
                 rigbody.gravityScale = 1;
-                moveToHere = (dcObj.transform.position - transform.position) * 15;
-
-                rigbody.AddForce(moveToHere);
-
             }
 
-            if (sPressedWhenDcExist == false)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && dcObj == null)
             {
-                dcObj.transform.position = Vector2.MoveTowards(dcObj.transform.position, dcObjThrowPoint, 0.1f);
+                dcSecEnter = false;
+                sPressedWhenDcExist = false;
+                spriteTimer = 0;
+                dcObj = Instantiate(dcFab, transform.position, Quaternion.identity);
+                dcObjThrowPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                dcSprRend = dcObj.GetComponent<SpriteRenderer>();
             }
-
-            if (Input.GetKey(KeyCode.S))
+            else
             {
-                dcObj.transform.position = Vector2.MoveTowards(dcObj.transform.position, transform.position, 0.1f);
-                sPressedWhenDcExist = true;
+                spriteTimer += 1;
+                if (spriteTimer >= 7)
+                {
+                    if (dcSprRend.sprite == dcSprA)
+                    {
+                        dcSprRend.sprite = dcSprB;
+                    }
+                    else
+                    {
+                        dcSprRend.sprite = dcSprA;
+                    }
+                    spriteTimer = 0;
+                }
+
+                if (Input.GetKey(KeyCode.W))
+                {
+                    rigbody.gravityScale = 1;
+                    moveToHere = (dcObj.transform.position - transform.position) * 15;
+
+                    rigbody.AddForce(moveToHere);
+
+                }
+
+                if (sPressedWhenDcExist == false)
+                {
+                    dcObj.transform.position = Vector2.MoveTowards(dcObj.transform.position, dcObjThrowPoint, 0.1f);
+                }
+
+                if (Input.GetKey(KeyCode.S))
+                {
+                    dcObj.transform.position = Vector2.MoveTowards(dcObj.transform.position, transform.position, 0.1f);
+                    sPressedWhenDcExist = true;
+                }
+            }
+        }
+        else
+        {
+            sprRend.GetComponent<BoxCollider2D>().enabled = false;
+            sprRend.GetComponent<Animator>().enabled = false;
+            sprRend.sprite = spriteDead;
+            if (deathForceAdded == false)
+            {
+                rigbody.AddForce(new Vector2(0, 500));
+                deathForceAdded = true;
             }
         }
     }
@@ -136,12 +151,6 @@ public class Player : MonoBehaviour
                 Destroy(other.gameObject);
                 Debug.Log("DreamCircle Destroyed");
             }
-        }
-
-        if (other.CompareTag("Star"))
-        {
-            sm.starsCollected++;
-            Destroy(other.gameObject);
         }
     }
     void OnTriggerExit2D(Collider2D other)

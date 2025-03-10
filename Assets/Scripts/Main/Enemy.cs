@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    public float health = 1f;
+
+    
     public float speed = 5f;
     public float desiredSeparation = 1f;
     public float separationForce = 2f;
@@ -24,6 +28,12 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag(enemyTag) && other.gameObject != gameObject)
             neighbors.Add(other.transform);
+
+        if (other.gameObject.tag == targetTag)
+        {
+            print("Player has Died!");
+            other.gameObject.GetComponent<Player>().ifDie = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -34,6 +44,9 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+
+
+
         Vector2 pos = transform.position;
         Vector2 chase = Vector2.zero;
         if (targetTransform)
