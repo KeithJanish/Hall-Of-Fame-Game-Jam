@@ -253,7 +253,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &273946408375165767
+--- !u!1001 &1986731947
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -301,17 +301,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 280317754336690249, guid: ffd71fbb5399266448c145a840cc8291, type: 3}
-      propertyPath: speed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 280317754336690249, guid: ffd71fbb5399266448c145a840cc8291, type: 3}
-      propertyPath: horMove
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 811067394086945324, guid: ffd71fbb5399266448c145a840cc8291, type: 3}
       propertyPath: m_Name
       value: Mr. Dream Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771274281875328934, guid: ffd71fbb5399266448c145a840cc8291, type: 3}
+      propertyPath: m_LinearDamping
+      value: 1.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -323,4 +319,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1396383644}
-  - {fileID: 273946408375165767}
+  - {fileID: 1986731947}
