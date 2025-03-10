@@ -196,6 +196,7 @@ MonoBehaviour:
   walk: {fileID: 6553789362979513245}
   onGround: 0
   ifDie: 0
+  spriteDead: {fileID: -625099412930161800, guid: 73115909c90c5ce4aad94b0c2767938a, type: 3}
 --- !u!95 &1288860311014056401
 Animator:
   serializedVersion: 7
